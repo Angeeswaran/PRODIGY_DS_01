@@ -1,0 +1,15 @@
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+url = 'https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv'
+titanic_data = pd.read_csv(url)
+
+# Create a histogram of the 'Age' column
+plt.figure(figsize=(10, 6))
+plt.hist(titanic_data['Age'].dropna(), bins=30, color ='purple',edgecolor='k', alpha=0.7)
+plt.title('Age Distribution of Titanic Passengers')
+plt.xlabel('Age')
+plt.ylabel('Frequency')
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.show()
